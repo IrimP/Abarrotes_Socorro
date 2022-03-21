@@ -1,0 +1,55 @@
+function cargarProducto()
+{
+    $.ajax({
+        contex : document.body,
+        url    : "Gestion/producto/producto.html"
+           }).done(function(data)
+                  {
+                      document.getElementById("paginaInicial").innerHTML = data;
+                  });
+}
+function cargarCliente()
+{
+    $.ajax({
+        contex : document.body,
+        url    : "Gestion/cliente/cliente.html"
+           }).done(function(data)
+                  {
+                      $("#paginaInicial").html(data);
+                  });
+}
+function cargarEmpleado()
+{
+        $.ajax({
+        contex : document.body,
+        url    : "Gestion/empleado/empleado.html"
+           }).done(function(data)
+                  {
+                     
+                      $("#paginaInicial").html(data);
+                  });
+}
+
+
+function cargarCategoria()
+{
+        $.ajax({
+        contex : document.body,
+        url    : "Gestion/categoria/categoria.html"
+           }).done(function(data)
+                  {
+                      $("#paginaInicial").html(data);
+                  });
+                  }
+                  
+function cargarM()
+{
+        $.ajax({
+        contex : document.body,
+        url    : "Gestion/movimiento/movimiento.html"
+           }).done(function(data)
+                  {
+                      $("#paginaInicial").html(data);
+                  });
+                  }
+
