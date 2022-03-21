@@ -1,0 +1,80 @@
+/*
+	Base de datos tienda socorro
+    Archivo de Definición de Datos (DDL)
+*/
+/*
+	Version: 1.0
+    Fecha: 17/08/2022
+    Autor: Ulises Reyes Valadez
+*/
+
+drop database if exists tiendaSocorro;
+
+create database tiendaSocorro;
+
+use tiendaSocorro;
+
+-- Esta tabla guarda los datos de una persona
+create table persona(
+	idPersona int not null auto_increment primary key,
+	nombre varchar (15) not null,
+	apellidoPaterno varchar (15) not null,
+	apellidoMaterno varchar (15) not null,
+	telefono varchar (10) not null,
+	genero varchar (7) not null
+);
+
+create table empleado(
+	idEmpleado int not null auto_increment primary key,
+    idPersona int not null,
+    numeroEmpleado varchar (20) not null,
+	domicilio varchar (50) not null, 
+    puesto varchar (20) not null, 
+    rfc varchar (11) not null, 
+    usuario varchar (20) not null, 
+    contrasenia varchar (20) not null,
+	estatus varchar (15) not null default 'Activo',
+    constraint fk_empleado_persona foreign key (idPersona) references persona (idPersona) on delete cascade on update cascade
+);
+
+create table cliente(
+	idCliente int not null auto_increment primary key,
+    idPersona int not null,
+	estatus varchar (15) not null default 'Activo',
+    constraint fk_cliente_persona foreign key (idPersona) references persona (idPersona) on delete cascade on update cascade
+);
+
+create table categoria(
+	idCategoria int not null auto_increment primary key, 
+    nombre varchar (30) not null, 
+    descripcion text not null
+);
+
+create table producto(
+	idProducto int not null auto_increment primary key,
+    idCategoria int not null,
+    nombre varchar (30) not null,
+    marca varchar (30) not null, 
+    precio float not null,
+    unidadesEnExistencia int not null, 
+	estatus varchar (15) not null default 'Activo',
+    constraint fk_producto_categoria foreign key (idCategoria) references categoria (idCategoria) on delete cascade on update cascade
+);
+
+create table compra(
+	idProducto int not null,
+    idCliente int not null,
+    unidadesCompradas int not null, 
+    constraint fk_compra_producto foreign key (idProducto) references producto (idProducto) on delete cascade on update cascade, 
+    constraint fk_compra_cliente foreign key (idCliente) references cliente (idCliente) on delete cascade on update cascade
+);
+
+create table venta(
+	idProducto int not null, 
+    idEmpleado int not null, 
+    unidadesVendidas int not null, 
+    constraint fk_venta_producto foreign key (idProducto) references producto (idProducto) on delete cascade on update cascade, 
+    constraint fk_venta_empleado foreign key (idEmpleado) references empleado (idEmpleado) on delete cascade on update cascade
+);
+    
+    
