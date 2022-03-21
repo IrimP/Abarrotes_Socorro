@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Abarrotes Socorro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Sitio Abarrotes Socorro">
+        <meta name ="keywords" content="Abarrotes Socorro">
+        <meta name="author" content="Cloudnets">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <link rel="stylesheet" type="text/css" href="style/bootstrap/css/bootstrap.min.css">
+        <link rel ="stylesheet" type ="text/css" href="style/bootstrap/css/Estilos.css">
+        <link type ="text/css" rel="stylesheet" href="style/sweetalert2/sweetalert2.min.css">
+   
+  <STYLE>
+BODY { background: url(media/img/fondo2.PNG) #FFC9D6 center fixed no-repeat}
+</STYLE>
+    </head>
+    
+    <body >
+        <br><br>
+        <nav class="navbar navbar-expand-lg navbar-light mb-lg-6" style="background-color: #ffffff">
+                <div class ="col-4">
+                    <img  src="media/img/LogoStore.png" alt="" width="180px" height="180px" class="d-inline-block align-text-top"/>
+                </div>
+            <div class ="col-7">
+                <ul class="navbar-nav me-auto"> 
+                    <li class="nav-item"><a class="nav-link text-dark" href="#" onclick="cargarEmpleado()">&nbsp; Empleado &nbsp;</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#" onclick="cargarCliente()">&nbsp; Cliente &nbsp;</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#" onclick="cargarProducto()">&nbsp; Producto &nbsp;</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#" onclick="cargarCategoria()">&nbsp; Categor&iacute;a &nbsp;</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#" onclick="cargarM()">&nbsp;  Movimiento  &nbsp;</a></li>
+                </ul>
+            </div>
+           
+             <br><br>
+            <div class="dropdown col-1" id="icon" >
+            <button class="mainmenubtn"> <a href="" style="color:red;" onclick=""> <i class="glyphicon glyphicon-user"></i></a> </button>
+            <div class="dropdown-child">
+                   <a href="index.html">Cerrar Sesi&oacute;n</a>
+            </div>
+            </div>
+
+        </nav>
+        
+         <div class="row">
+                     
+           <div id="paginaInicial" class="conteiner-fluid">
+            <div class="text-light text-center">
+            <br><br>
+             <span class ="text-center text-dark" id="title">BIENVENIDO</span>
+        </div>
+        </div>
+             </div>
+     
+         <script  type="text/javascript" src ="js/index.js"></script>
+         <script type="text/javascript" src="js/jquery/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="style/sweetalert2/sweetalert2.all.min.js"></script>
+        <script src="Gestion/main/main.js" type="text/javascript"></script>
+       </body>
+    
+</html>
